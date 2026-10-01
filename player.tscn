@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boyppmtub411f"]
 
 [ext_resource type="Texture2D" uid="uid://daeunluaho646" path="res://art/playerGrey_up1.png" id="1_hqtel"]
+[ext_resource type="Script" uid="uid://b05famochvpyi" path="res://player.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://cnkfak5f6h0mo" path="res://art/playerGrey_up2.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://dq7hjg7dbkq8k" path="res://art/playerGrey_walk1.png" id="3_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bj1sfm4aohykl" path="res://art/playerGrey_walk2.png" id="4_1jxqw"]
@@ -36,6 +37,7 @@ height = 66.0
 
 [node name="Player" type="Area2D" unique_id=677835627]
 position = Vector2(0, 1)
+script = ExtResource("1_sweqy")
 metadata/_edit_group_ = true
 metadata/_edit_horizontal_guides_ = [-2.0]
 
