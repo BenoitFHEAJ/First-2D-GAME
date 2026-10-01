@@ -19,8 +19,13 @@ func _process(delta):
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 
-	if velocity.length() > 0:
+	# Normalizing velocity to prevent higher values in diagonal
+	if velocity.length() > 0: 
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
+		
+	# Prevent player from exiting the screen	
+	position += velocity * delta 
+	position = position.clamp(Vector2(0, 0), Vector2(480, 720))

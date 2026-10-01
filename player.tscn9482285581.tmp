@@ -44,7 +44,7 @@ metadata/_edit_horizontal_guides_ = [-2.0]
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1536872639]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_0h33x")
-animation = &"walk"
+animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1456052475]
 shape = SubResource("CapsuleShape2D_0h33x")
