@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://boyppmtub411f"]
+
+[node name="Player" type="Area2D" unique_id=677835627]
+metadata/_edit_group_ = true
