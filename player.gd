@@ -30,11 +30,17 @@ func _process(delta):
 	position += velocity * delta 
 	position = position.clamp(Vector2(0, 0), screen_size)
 	
-	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
-		# See the note below about the following boolean assignment.
-		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
+	if velocity.x < 0: # If Speed is smaller than 0
+		# Flip H. the sprite when speed < 0 (going left)
+		$AnimatedSprite2D.flip_h = true 
+	else : 
+		# Flip back the sprite when condition above isn't true
+		$AnimatedSprite2D.flip_h = false 
+		
+	if velocity.y < 0: # If Speed is smaller than 0
+		# Flip V. the sprite when speed < 0 (going down)
+		$AnimatedSprite2D.flip_v = true 
+	else : 
+		# Flip back the sprite when condition above isn't true
+		$AnimatedSprite2D.flip_v = false 
+	
