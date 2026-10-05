@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cldgwk553qa1q"]
+
+[ext_resource type="PackedScene" uid="uid://boyppmtub411f" path="res://player.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node" unique_id=2017474758]
+
+[node name="Player" parent="." unique_id=677835627 instance=ExtResource("1_ig7tw")]
+
+[node name="MobTimer" type="Timer" parent="." unique_id=1363242990]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1211435810]
+
+[node name="StartTimer" type="Timer" parent="." unique_id=126649819]
+wait_time = 2.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=204698039]
