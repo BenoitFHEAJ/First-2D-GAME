@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://cldgwk553qa1q"]
 
+[ext_resource type="Script" uid="uid://0kusowkks1ea" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://boyppmtub411f" path="res://player.tscn" id="1_ig7tw"]
 
+[sub_resource type="Curve2D" id="Curve2D_ig7tw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Main" type="Node" unique_id=2017474758]
+script = ExtResource("1_0xm2m")
 
 [node name="Player" parent="." unique_id=677835627 instance=ExtResource("1_ig7tw")]
+visible = false
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1363242990]
 wait_time = 0.5
@@ -17,3 +26,8 @@ one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="." unique_id=204698039]
 position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="." unique_id=1440599686]
+curve = SubResource("Curve2D_ig7tw")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=1033183882]
