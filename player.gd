@@ -7,10 +7,12 @@ var screen_size # Size of the game window.
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	#hide() # Hiding the player
+	hide() # Hiding the player
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	# Moving player regarding inputs
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -32,6 +34,7 @@ func _process(delta):
 	position += velocity * delta 
 	position = position.clamp(Vector2(0, 0), screen_size)
 	
+	# Animating the sprite based on velocity
 	if velocity.x < 0: # If Speed is smaller than 0
 		# Flip H. the sprite when speed < 0 (going left)
 		$AnimatedSprite2D.flip_h = true 
@@ -51,6 +54,7 @@ func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
+	
 func start(pos):
 	position = pos
 	show()

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ck08adjhwwucc"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1082363866]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218411992]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2123084753]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CollisionShape2D" unique_id=2104383916]
