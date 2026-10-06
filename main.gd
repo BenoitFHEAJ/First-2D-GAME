@@ -3,6 +3,12 @@ extends Node
 @export var mob_scene: PackedScene # Adding Mob Scene to inspector
 var score
 
+@onready var logo: TextureRect = $HUD/LogoWbf
+
+func _ready():
+	await get_tree().create_timer(2.0).timeout
+	logo.hide()
+	
 # Called when the node enters the scene tree for the first time.
 #func _ready(): # Only For Testing
 	#new_game() # Only For Testing

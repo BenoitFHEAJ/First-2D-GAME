@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c8w84j4yro0nb"]
+
+[ext_resource type="Texture2D" uid="uid://pqhni3f2gd6y" path="res://Logo WBF Studio.png" id="1_2go3r"]
+[ext_resource type="AudioStream" uid="uid://dxl580xhyqsc1" path="res://audio/jingles-steel_00.ogg" id="2_spvhu"]
+
+[node name="Control" type="Control" unique_id=1259339720]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoFond" type="ColorRect" parent="." unique_id=1589840509]
+visibility_layer = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LogoWbf" type="TextureRect" parent="." unique_id=1245326735]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -225.0
+offset_right = 225.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2go3r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1161353843]
+stream = ExtResource("2_spvhu")
+volume_db = -10.0
+autoplay = true
