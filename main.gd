@@ -11,14 +11,18 @@ var score
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$HUD.show_game_over()
 
 # Restart the game
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	$HUD.update_score(score)
+	$HUD.show_message("Get Ready")
+	get_tree().call_group("mobs", "queue_free") # Clear All enemies on New Game
 
-# Signal from MobTimer
+# Signal from MobTimer, Add New instance of Mob scene
 func _on_mob_timer_timeout():
 	# Create a new instance of the Mob scene.
 	var mob = mob_scene.instantiate()
@@ -47,6 +51,7 @@ func _on_mob_timer_timeout():
 # Signal from ScoreTimer
 func _on_score_timer_timeout():
 	score = score + 1 # Incrementing score as time pass
+	$HUD.update_score(score)
 
 # Signal from StartTimer
 func _on_start_timer_timeout():
