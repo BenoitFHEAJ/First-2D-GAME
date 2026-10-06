@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ph0jvsbsoahm"]
+
+[ext_resource type="FontFile" uid="uid://c7cpqtoijrk41" path="res://fonts/Xolonium-Regular.ttf" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1332946095]
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=512301616]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=405677784]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_37p78")
+text = "123"
+
+[node name="Message" type="Label" parent="." unique_id=1345965565]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StartButton" type="Button" parent="." unique_id=609845893]
+offset_right = 8.0
+offset_bottom = 8.0

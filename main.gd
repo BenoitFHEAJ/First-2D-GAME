@@ -4,8 +4,8 @@ extends Node
 var score
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	new_game()
+#func _ready(): # Only For Testing
+	#new_game() # Only For Testing
 
 # Signal from hit on Player Scene to stop game when hit
 func game_over():
